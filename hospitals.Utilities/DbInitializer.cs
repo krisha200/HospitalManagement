@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace hospitals.Utilities
 {
-    internal class DbInitializer : IDbInitializer
+    public class DbInitializer : IDbInitializer
     {
         private UserManager<IdentityUser> _userManager;
         private RoleManager<IdentityRole> _roleManager;
