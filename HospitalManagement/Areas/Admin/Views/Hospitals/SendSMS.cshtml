@@ -1,0 +1,32 @@
+﻿@using Hospital.ViewModels
+@model SendSMSViewModel
+<div>@ViewBag.Message</div>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.PatientName)
+        @Html.TextBoxFor(model => model.PatientName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label asp-for="Hospital.Name" class="control-label">Hospital</label>
+        <select asp-for="Hospital.Name" class="form-control" asp-items="@ViewBag.Hospital">
+            <option>Select Hospital</option>
+        </select>
+        <span asp-validation-for="Hospital.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Date)
+        @Html.TextBoxFor(model => model.Date, new { type = "date", @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Time)
+        @Html.TextBoxFor(model => model.Time, new { type = "time", @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label asp-for="To" class="control-label">Contact No.</label>
+        @Html.TextBoxFor(model => model.To, new { @class = "form-control" })
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Send SMS</button>
+}

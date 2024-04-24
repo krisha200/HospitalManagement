@@ -5,76 +5,48 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Find a Hospital</h1>
+<a asp-action="Create">Create</a>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Type
-            </th>
-            <th>
-                City
-            </th>
-            <th>
-                PinCode
-            </th>
-            <th>
-                Country
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Data) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PinCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id}) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.Id })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="row">
+    @foreach (var item in Model.Data)
+    {
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/150" class="card-img" alt="Hospital Image">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-text"><strong>Type:</strong> @item.Type</p>
+                            <p class="card-text"><strong>Location:</strong> @item.City, @item.Country - @item.PinCode</p>
+                            <div class="text-right">
+                                <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
 
-<cs-pager cs-paging-pagesize=(int)Model.PageSize
-          cs-paging-pagenumber=(int)Model.PageNumber
-          cs-paging-totalitems=(int)Model.TotalItem
-          cs-pagenumber-param="pageNumber"
-          asp-controller="Hospitals"
-
-                asp-action="Index"
-                cs-pager-li-current-class="page-item active"
-                cs-pager-li-other-class="page-item "
-                cs-pager-li-non-active-class="page-item disabled"
-                cs-pager-link-current-class="page-link"
-                cs-pager-link-other-class="page-link">
-            </cs-pager>
+<nav aria-label="Page navigation">
+    <cs-pager cs-paging-pagesize="@(int)Model.PageSize"
+              cs-paging-pagenumber="@(int)Model.PageNumber"
+              cs-paging-totalitems="@(int)Model.TotalItem"
+              cs-pagenumber-param="pageNumber"
+              asp-controller="Hospitals"
+              asp-action="Index"
+              cs-pager-ul-class="pagination"
+              cs-pager-li-current-class="page-item active"
+              cs-pager-li-other-class="page-item"
+              cs-pager-li-non-active-class="page-item disabled"
+              cs-pager-link-current-class="page-link"
+              cs-pager-link-other-class="page-link">
+    </cs-pager>
+</nav>

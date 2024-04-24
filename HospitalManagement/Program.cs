@@ -50,7 +50,7 @@ app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{Area=admin}/{controller=Hospitals}/{action=Index}/{id?}");
+    pattern: "{Area=admin}/{controller=Hospitals}/{action=Home}/{id?}");
 
 app.Run();
 

@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - HospitalManagement</title>
+    <style>
+        /* Your existing styles remain unchanged */
+        /* Additional styles for enhanced UI */
+        .hero-section {
+            /* background-image: url('../../../../wwwroot/Images/hospital.jpg');
+            background-size: cover;
+            background-position: center; */
+            color: black;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero-image {
+            right:0;
+            width: 50%;
+            height: 30%;
+            object-fit: cover;
+            
+        }
+
+            .hero-section h1 {
+                font-size: 3.5rem;
+                margin-bottom: 20px;
+            }
+
+            .hero-section p {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+
+            .hero-section .btn-primary {
+                font-size: 1.2rem;
+                padding: 12px 30px;
+                border-radius: 30px;
+                transition: all 0.3s ease;
+                
+            }
+
+                .hero-section .btn-primary:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+                }
+
+        .services-section {
+            background-color: #f8f9fa;
+            padding: 100px 0;
+        }
+
+        .service {
+            text-align: center;
+            margin-bottom: 50px;
+            border: 1px solid black;
+        }
+
+            .service h3 {
+                font-size: 2rem;
+                margin: 40px 0 0 0;
+            }
+
+            .service p {
+                font-size: 1.1rem;
+                margin-top: 20px;
+                margin-bottom: 40px;
+            }
+
+        .testimonial-section {
+            background-color: #f8f9fa; /* Light gray background */
+            color: #333; /* Dark text color */
+            padding: 100px 0;
+        }
+
+            .testimonial-section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 50px;
+                color: #000; /* Black text color */
+            }
+
+        .testimonial-item {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .testimonial-img {
+            width: 180px; /* Adjust size as needed */
+            height: 180px; /* Adjust size as needed */
+            border-radius: 50%; /* Makes the image circular */
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            color: black; /* Change to the desired color */
+        }
+        .main_section{
+            display: flex;
+            margin-top: 40px;
+        }
+        .contact-form{
+            width: 50%;
+            margin-right: 20px;
+        }
+        
+        .follow {
+            color: #000;
+            width: 50%;
+        }
+
+            .follow span {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+            .social-icons i {
+                margin: 0 5px;
+                font-size: 20px;
+                color: #fff;
+            }
+
+        .follow p {
+            margin-top: 20px;
+            font-size: 12px;
+        }
+
+        .partners-section {
+            background-color: #fff;
+            padding: 70px 0;
+        }
+
+        .partners-title {
+            font-size: 2.5rem;
+            margin-bottom: 100px;
+        }
+
+        .partner-logo {
+            display: inline-block;
+            margin: 50px 20px;
+        }
+
+            .partner-logo img {
+                max-width: 150px;
+                height: auto;
+            }
+
+        .statistics-section {
+            background-color: #FFFFFF; 
+            color: #000; /* black */
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .statistic {
+            display: inline-block;
+            margin: 0 30px;
+        }
+
+            .statistic h2 {
+                font-size: 4rem;
+                margin-bottom: 10px;
+            }
+
+            .statistic p {
+                font-size: 2rem;
+            }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <!-- Your existing navigation bar remains unchanged -->
+    </header>
+
+    <!-- Homepage content -->
+    <div class="container-fluid">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container" style="display:flex; width:100%;">
+                <div>
+                <h1>Welcome to Hospital Management System</h1>
+                <p>Providing Quality Healthcare Services</p>
+                <a href="#services" class="btn btn-primary btn-lg">Explore Services</a>
+                </div>
+                <img src="~/hospital.jpeg" alt="Hero Image" class="img-fluid hero-image">
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="text-center mb-5">Our Services</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service">
+                            <h3>Emergency Care</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service">
+                            <h3>Specialized Treatments</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service">
+                            <h3>Wellness Programs</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- Testimonial Section -->
+        <section class="testimonial-section">
+            <div class="container">
+                <h2 class="text-center mb-5">What Our Patients Say</h2>
+                <div id="testimonial-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="testimonial-item">
+                                <img src="~/hospital.jpeg" alt="John Doe" class="testimonial-img">
+                                <p class="testimonial-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
+                                <cite class="testimonial-author">- John Doe</cite>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial-item">
+                                <img src="~/hospital.jpeg" alt="Jane Smith" class="testimonial-img">
+                                <p class="testimonial-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
+                                <cite class="testimonial-author">- Jane Smith</cite>
+                            </div>
+                        </div>
+                        <!-- Add more testimonials as needed -->
+                    </div>
+                    <!-- Navigation buttons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Partners section-->
+        <section class="partners-section">
+            <div class="container">
+                <h2 class="partners-title text-center mb-5">Trusted Partners</h2>
+                <div class="text-center">
+                    <div class="partner-logo">
+                        <img src="Images/leica-logo.png" alt="Leica Logo">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="Images/redbull-logo.png" alt="Red Bull Logo">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="Images/tesla-logo.png" alt="Tesla Logo">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="Images/surf-coffee-logo.png" alt="Surf Coffee Logo">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="Images/google-logo.png" alt="Google Logo">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="Images/prada-logo.png" alt="Prada Logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Stats Section -->
+        <section class="statistics-section">
+            <div class="container">
+                <div class="statistic">
+                    <h2>10K+</h2>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="statistic">
+                    <h2>99%</h2>
+                    <p>Accuracy</p>
+                </div>
+                <div class="statistic">
+                    <h2>500+</h2>
+                    <p>Hospitals</p>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <div class="main_section">
+
+            <form action="#" method="post" class="contact-form">
+                <h4>Any Queries? Reach Us</h4>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>          
+        <section class="follow">
+            <h2 style="text-align:center;">Contact Us:</h2>
+            <div style="text-align:center;">
+                <h5 class="contact_p">Email: admin@gmail.com</h5>
+                <h5 class="contact_p">Phone: 123-456-7890</h5>
+                <h5 class="contact_p">Address: 123 Main St, Vadodara</h5>
+                </div>
+                <h2 style="text-align:center; margin-top:100px;">Join Us</h2>
+            <div class="social-icons" style="text-align:center">
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new" />&nbsp; &nbsp;
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin" />&nbsp; &nbsp;
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/twitterx--v1.png" alt="twitterx--v1" />&nbsp; &nbsp;
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/youtube-play.png" alt="youtube-play" />
+            </div>
+        </section>
+        </div>
+    </div>
+
+</body>
+</html>
